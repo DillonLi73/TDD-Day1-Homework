@@ -29,15 +29,15 @@ namespace TDD_Day1_Homework.Tests
         public void SumOneFieldByPagingTest_orders_is_orderData1_fieldName_is_Cost_numPerPage_is_3_result_should_be_6_15_24_21()
         {
             // arrange
+            OrderCalculator target = new OrderCalculator();
+
             List<Order> orders = this._orderData1;
             string fieldName = "Cost";
             int numPerPage = 3;
             List<int> excepted = new List<int> { 6, 15, 24, 21 };
 
-            OrderCalculator ordCalculator = new OrderCalculator();
-
             // act
-            List<int> actual = ordCalculator.SumOneFieldByPaging(orders, fieldName, numPerPage);
+            List<int> actual = target.SumOneFieldByPaging(orders, fieldName, numPerPage);
 
             // assert
             CollectionAssert.AreEqual(excepted, actual);
@@ -47,15 +47,14 @@ namespace TDD_Day1_Homework.Tests
         public void SumOneFieldByPagingTest_orders_is_orderData1_fieldName_is_Revenue_numPerPage_is_4_result_should_be_50_66_60()
         {
             // arrange
+            OrderCalculator target = new OrderCalculator();
             List<Order> orders = this._orderData1;
             string fieldName = "Revenue";
             int numPerPage = 4;
             List<int> excepted = new List<int> { 50, 66, 60 };
 
-            OrderCalculator ordCalculator = new OrderCalculator();
-
             // act
-            List<int> actual = ordCalculator.SumOneFieldByPaging(orders, fieldName, numPerPage);
+            List<int> actual = target.SumOneFieldByPaging(orders, fieldName, numPerPage);
 
             // assert
             CollectionAssert.AreEqual(excepted, actual);
