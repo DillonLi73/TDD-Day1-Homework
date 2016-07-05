@@ -26,7 +26,7 @@ namespace TDD_Day1_Homework.Tests
         };
 
         [TestMethod()]
-        public void SumOneFieldByPagingTest_orders_orderData1_field_Cost_numPerPage_3_result_should_be_6_15_24_21()
+        public void SumOneFieldByPagingTest_orders_is_orderData1_fieldName_is_Cost_numPerPage_is_3_result_should_be_6_15_24_21()
         {
             // arrange
             List<Order> orders = this._orderData1;
@@ -44,7 +44,7 @@ namespace TDD_Day1_Homework.Tests
         }
 
         [TestMethod()]
-        public void SumOneFieldByPagingTest_orders_orderData1_field_Revenue_numPerPage_4_result_should_be_50_66_60()
+        public void SumOneFieldByPagingTest_orders_is_orderData1_fieldName_is_Revenue_numPerPage_is_4_result_should_be_50_66_60()
         {
             // arrange
             List<Order> orders = this._orderData1;
