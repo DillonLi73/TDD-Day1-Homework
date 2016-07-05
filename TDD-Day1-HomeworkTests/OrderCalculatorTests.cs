@@ -14,17 +14,17 @@ namespace TDD_Day1_Homework.Tests
         private List<Order> GetOrders()
         {
             return new List<Order> {
-                new Order(1, 1, 11, 21),
-                new Order(2, 2, 12, 22),
-                new Order(3, 3, 13, 23),
-                new Order(4, 4, 14, 24),
-                new Order(5, 5, 15, 25),
-                new Order(6, 6, 16, 26),
-                new Order(7, 7, 17, 27),
-                new Order(8, 8, 18, 28),
-                new Order(9, 9, 19, 29),
-                new Order(10, 10, 20, 30),
-                new Order(11, 11, 21, 31)
+                new Order() { Id=1,  Cost=1,  Revenue=11, SellPrice=21 },
+                new Order() { Id=2,  Cost=2,  Revenue=12, SellPrice=22 },
+                new Order() { Id=3,  Cost=3,  Revenue=13, SellPrice=23 },
+                new Order() { Id=4,  Cost=4,  Revenue=14, SellPrice=24 },
+                new Order() { Id=5,  Cost=5,  Revenue=15, SellPrice=25 },
+                new Order() { Id=6,  Cost=6,  Revenue=16, SellPrice=26 },
+                new Order() { Id=7,  Cost=7,  Revenue=17, SellPrice=27 },
+                new Order() { Id=8,  Cost=8,  Revenue=18, SellPrice=28 },
+                new Order() { Id=9,  Cost=9,  Revenue=19, SellPrice=29 },
+                new Order() { Id=10, Cost=10, Revenue=20, SellPrice=30 },
+                new Order() { Id=11, Cost=11, Revenue=21, SellPrice=31 },
             };
         }
 
@@ -37,13 +37,13 @@ namespace TDD_Day1_Homework.Tests
             List<Order> orders = this.GetOrders();
             string fieldName = "Cost";
             int numPerPage = 3;
-            List<int> excepted = new List<int> { 6, 15, 24, 21 };
+            List<int> expected = new List<int> { 6, 15, 24, 21 };
 
             // act
             List<int> actual = target.SumOneFieldByPaging(orders, fieldName, numPerPage);
 
             // assert
-            CollectionAssert.AreEqual(excepted, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod()]
@@ -54,13 +54,13 @@ namespace TDD_Day1_Homework.Tests
             List<Order> orders = this.GetOrders();
             string fieldName = "Revenue";
             int numPerPage = 4;
-            List<int> excepted = new List<int> { 50, 66, 60 };
+            List<int> expected = new List<int> { 50, 66, 60 };
 
             // act
             List<int> actual = target.SumOneFieldByPaging(orders, fieldName, numPerPage);
 
             // assert
-            CollectionAssert.AreEqual(excepted, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
